@@ -1,4 +1,6 @@
-// node char-frequency.js < test.txt
+// Test: node chars-frequency.js < text.txt
+
+'use strict';
 
 class CharsFrequency {
     constructor() {
@@ -31,7 +33,7 @@ class CharsFrequency {
     }
 }
 
-chars_frequency = new CharsFrequency();
+let chars_frequency = new CharsFrequency();
 
 process.stdin.setEncoding("utf-8");
 process.stdin.on('data', function (text) {
