@@ -1,19 +1,20 @@
+// https://www.codewars.com/kata/5848565e273af816fb000449
+
+'use strict';
+
 var encryptThis = function (text) {
     let result = '';
     for (let token of text.split(' ')) {
-        result += token.charCodeAt(0);
-        if (token.length > 1) {
-            let [x, y] = [token[1], token[token.length - 1]];
-            token[1] = y;
-            token[token.length - 1] = x;
-            result += token;
-        }
+        let [first, second, last, rest] = [token.charAt(0), token.charAt(1), token.slice(-1), token.slice(2, -1)];
+        result += first.charCodeAt(0);
+
+        if (token.length === 2)
+            result += second;
+
+        if (token.length > 2)
+            result += last + rest + second;
+
         result += ' ';
     }
     return result.trimEnd();
 }
-// A = unicodeA
-// AB = unicodeA+B
-// ABC = unicodeA+CB
-// ABCD = unicodeA+DCB
-//   assert.strictEqual(encryptThis("A wise old owl lived in an oak"), "65 119esi 111dl 111lw 108dvei 105n 97n 111ka");

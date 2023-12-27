@@ -1,3 +1,5 @@
+// https://www.codewars.com/kata/52efefcbcdf57161d4000091
+
 'use strict';
 
 function count(string) {
