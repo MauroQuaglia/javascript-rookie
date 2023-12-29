@@ -11,4 +11,8 @@ function f() {
     return String.fromCharCode(116, 105, 110, 121);
 }
 
+// f=()=>'\x74\x69\x6e\x79';
+
 // f=()=>String.fromCharCode(116,105,110,121);
+
+f=()=>['','74','69','6e','79'].join('\\x')
