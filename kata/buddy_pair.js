@@ -2,26 +2,31 @@
 
 'use strict';
 
-function buddy(start, limit) {
-    let n_map = new Map();
-    for (let n = start; n <= limit; n++) {
-        n_map.set(n, divisors_sum(n));
-    }
+let history = new Map();
 
-    for (let n of n_map.keys()) {
-        let m = n_map.get(n) - 1;
-        if ((m > n) && (divisors_sum(m) === (n + 1))) {
+function buddy(start, limit) {
+    for (let n = start; n <= limit; n++) {
+        let sum_n = divisors_sum(n);
+        let m = sum_n - 1;
+        if (m > n && divisors_sum(m) === (n + 1)) {
             return [n, m];
         }
     }
-
     return "Nothing";
 }
 
 function divisors_sum(number) {
-    let result = [];
-    for (let i = 1; i <= number / 2; i++) {
-        if (number % i === 0) result.push(i);
+    if (history.has(number))
+        return history.get(number)
+
+    let result = [1];
+    for (let i = 2; i <= number / 2; i++) {
+        if (number % i === 0) {
+            result.push(i);
+        }
     }
-    return result.reduce((sum, current) => sum + current, 0);
+    let total = result.reduce((sum, current) => sum + current);
+    history.set(number, total)
+
+    return total;
 }
