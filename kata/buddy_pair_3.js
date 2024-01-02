@@ -15,7 +15,7 @@ function buddy(start, limit) {
 
 function divisors_sum(number) {
     let total = 1;
-    for (let i = 2; i <= number / 2; i++) {
+    for (let i = Math.floor(number / 2); i > 1; i--) {
         if (number % i === 0) total += i;
     }
     return total;
