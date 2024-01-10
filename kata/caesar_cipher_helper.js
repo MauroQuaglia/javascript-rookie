@@ -13,43 +13,27 @@ var CaesarCipher = function (shift) {
     ]);
 
     this.shift = shift;
-    
+
     this.encode = function (text) {
-        text = text.toLowerCase();
-
-        if (this.shift <= 0) {
-            return text.toUpperCase();
-        }
-
-        let result = '';
-        for (let char of text) {
-            result += _ENCODE_PERMUTATION.get(char) ?? char;
-        }
-
-        --this.shift;
-
-        return this.encode(result);
+        let shift = this.shift;
+        return this._crypter(shift, text.toLowerCase(), _ENCODE_PERMUTATION)
     }
-    
-    this.decode = function (text) {
-        text = text.toLowerCase();
 
-        if (this.shift <= 0) {
+    this.decode = function (text) {
+        let shift = this.shift;
+        return this._crypter(shift, text.toLowerCase(), _DECODE_PERMUTATION)
+    }
+
+    this._crypter = function (shift, text, rules) {
+        if (shift <= 0) {
             return text.toUpperCase();
         }
 
         let result = '';
         for (let char of text) {
-            result += _DECODE_PERMUTATION.get(char) ?? char;
+            result += rules.get(char) ?? char;
         }
 
-        --this.shift;
-
-        return this.decode(result);
+        return this._crypter(--shift, result, rules);
     }
 };
-
-
-//var c = new CaesarCipher(5); // creates a CipherHelper with a shift of five
-//c.encode('Codewars'); // returns 'HTIJBFWX'
-//c.decode('BFKKQJX'); // returns 'WAFFLES'
