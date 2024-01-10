@@ -45,7 +45,7 @@ var CaesarCipher = function (shift) {
 
         --this.shift;
 
-        return this.encode(result);
+        return this.decode(result);
     }
 };
 
