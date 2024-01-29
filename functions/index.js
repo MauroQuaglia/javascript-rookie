@@ -1,5 +1,5 @@
 // Quando definisco una funzione devo stare attento a tre cose:
-// Scope: codice + visibilità delle variabili
+// Scope: codice + visibilità delle variabili.
 // this
 
 // Lo scope viene valutato nel contesto di dove è stata definita la funzione originariamente.
