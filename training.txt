@@ -1,1 +1,4 @@
 * Devo fare la sezione 3.
+
+
+console.log('a', ' b', ' c') // a b c
