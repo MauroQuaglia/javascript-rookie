@@ -1,4 +1,2 @@
-* Devo fare la sezione 3.
-
-
-console.log('a', ' b', ' c') // a b c
+FROM "https://it.javascript.info/":
+* CAPITOLO 8: "https://it.javascript.info/prototypes": WIP (Il ciclo for…in)
