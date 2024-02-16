@@ -1,2 +1,2 @@
 FROM "https://it.javascript.info/":
-* CAPITOLO 8: "https://it.javascript.info/prototypes": WIP (Il ciclo for…in)
+* CAPITOLO 8: "https://it.javascript.info/prototypes": DONE
