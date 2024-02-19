@@ -1,7 +1,8 @@
 * prototypal inheritance = ereditarietà dei prototype
 * La proprietà "Prototype" è interna e nascosta, ma esistono diversi modi per poterla impostare.
-  * Funzione: `.prototype`
+  * Funzione: `.prototype` (proprietà prototype)
   * Oggetto: `.__proto__` (getter e setter per il prototype, non è il prototype!)
+* Se a una Funzione F cambio il prototype, tutti gli oggetti creati prima del cambio di prototype avranno ancora le proprietà originarie.
 * Il prototype può essere solo un `oggetto` o un `null`.
 * Non posso ereditare da più oggetti.
 * Il prototype è:
