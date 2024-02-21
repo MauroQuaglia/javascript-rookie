@@ -27,3 +27,5 @@ console.log(typeof stringaOggetto); // "object"
 * La funzione `__proto__` che è un getter e setter del prototype è datata, si devono usare:
   * `Object.getPrototypeOf`
   * `Object.setPrototypeOf`
+* Clonazione:
+  * `let clone = Object.create(Object.getPrototypeOf(obj), Object.getOwnPropertyDescriptors(obj));`
