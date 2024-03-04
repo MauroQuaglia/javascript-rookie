@@ -1,2 +1,2 @@
 FROM "https://it.javascript.info/":
-* CAPITOLO 8: 
+AT: https://it.javascript.info/dom-nodes
