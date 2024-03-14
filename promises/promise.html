@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Promises</title>
+	<title>Promise</title>
 	<script>
         function loadScript(src) {
             return new Promise(function (resolve, reject) {
                 let script = window.document.createElement('script');
                 script.src = src;
                 script.onload = () => resolve(script);
-                script.onerror = () => reject(new Error('BOOM'))
+                script.onerror = () => reject(new Error('Error!'))
                 window.document.head.append(script);
-                resolve(script);
             });
         }
 
-        let promise = loadScript('my_script.js');
-        promise.then(script => test());
+        let promise1 = loadScript('my_script.js');
+        promise1.then(script => test());
+
+        let promise2 = loadScript('my_script_xxx.js');
+        promise2.catch(error => alert(error));
+
 	</script>
 </head>
 <body>

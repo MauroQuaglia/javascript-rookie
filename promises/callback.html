@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Promises</title>
+    <title>Callback</title>
     <script>
         function loadScript(src, callback) {
             let script = window.document.createElement('script');
             script.src = src;
             script.onload = () => callback(null, script);
-            script.onerror = () => callback(new Error('Load error!'), null)
+            script.onerror = () => callback(new Error('Error!'), null)
             window.document.head.append(script);
         }
 
-        // Per errore, basta mettere 'my_script_xxx.js'
+        // Success
         loadScript('my_script.js', (error, script) => {
             if (error) {
-                alert('Errore!')
+                alert('Error!')
+            }
+
+            if (script) {
+                test();
+            }
+        });
+
+        // Error
+        loadScript('my_script_xxx.js', (error, script) => {
+            if (error) {
+                alert('Error!')
             }
 
             if (script) {
