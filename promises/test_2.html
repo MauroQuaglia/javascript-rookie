@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Resolved and Fulfilled</title>
+	<script>
+		// Inizialmente questa Promise è "pending".
+        // Dopo 3 secondi diventa "fulfilled", "settled" e "resolved" e passa il risultato a quella dopo.
+        new Promise((resolve, reject) => {
+
+            setTimeout(() => resolve('DONE 1'), 3000);
+
+        }).then(result => {
+            alert('ORA');
+            alert(result);
+        })
+	</script>
+
+	<script>
+        // Questa Promise è immediatamente "fulfilled" e "settled", ma non "resolved".
+		// Dop 3 secondi, quando anche la Promise più interna diventa "resolved" anche questa diventa "resolved".
+        new Promise((resolve, reject) => {
+
+            let other_promise = new Promise((resolve_1, reject_1) => {
+                setTimeout(() => resolve_1('DONE 2'), 6000);
+            });
+            resolve(other_promise);
+
+        }).then(result => {
+            alert('ORA');
+            alert(result);
+
+        })
+	</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>async/await</title>
+	<script>
+        // async significa che la funzione ritorn una Promise.
+        async function f() {
+            return 1; // Idem: Promise.resolve(1)
+        }
+
+        let promise = f();
+        promise.then(result => alert(result))
+	</script>
+
+	<script>
+		// Risulta 1 | 2 | FATTO!
+        async function f() {
+            let promise = new Promise((resolve, reject) => {
+                setTimeout(() => resolve("FATTO!"), 10000)
+            });
+
+            alert('1')
+            promise.then(result => alert(result))
+            alert('2')
+        }
+        f();
+	</script>
+
+	<script>
+		// Risulta 1 | FATTO | 2
+        // await funziona solo all'interno delle funzioni async
+        async function f() {
+            let promise = new Promise((resolve, reject) => {
+                setTimeout(() => resolve("FATTO!"), 10000)
+            });
+
+            // attende fino a quando la promise si risolve (*)
+            // Qui l'esecuzione va in pausa
+            //  Questo non costa alcuna risorsa della CPU, perché il motore può fare altri lavori nel frattempo: eseguire altri script, gestire eventi etc.
+            alert('1')
+            let result = await promise;
+            alert(result);
+            alert('2')
+        }
+
+        f();
+	</script>
+
+
+</head>
+<body>
+</body>
+</html>
