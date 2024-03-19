@@ -2,50 +2,72 @@
 <html lang="en">
 <head>
 	<title>async/await</title>
-	<script>
-        // async significa che la funzione ritorn una Promise.
-        async function f() {
-            return 1; // Idem: Promise.resolve(1)
-        }
 
-        let promise = f();
-        promise.then(result => alert(result))
-	</script>
-
-	<script>
-		// Risulta 1 | 2 | FATTO!
-        async function f() {
+	<!--<script>
+        // Risultato: 1 | 2 | FATTO!
+        function f() {
             let promise = new Promise((resolve, reject) => {
-                setTimeout(() => resolve("FATTO!"), 10000)
+                setTimeout(() => resolve("FATTO!"), 5000)
             });
 
-            alert('1')
-            promise.then(result => alert(result))
-            alert('2')
+            alert('1');
+            promise.then(result => alert(result));
+            alert('2');
         }
+
         f();
-	</script>
+	</script>-->
 
-	<script>
-		// Risulta 1 | FATTO | 2
+	<!--	<script>
+			// Risultato: 1 | FATTO! | 2
+			// In questo caso prima di chiamare 2, deve aspettare il risultato della Promise precedente.
+			function f() {
+				let promise = new Promise((resolve, reject) => {
+					setTimeout(() => resolve("FATTO!"), 5000)
+				});
+
+				alert('1');
+				promise
+					.then(result => alert(result))
+					.then(() => alert('2'))
+			}
+
+			f();
+		</script>-->
+
+	<!--<script>
         // await funziona solo all'interno delle funzioni async
+        // Risultato: 1 | FATTO! | 2
         async function f() {
             let promise = new Promise((resolve, reject) => {
-                setTimeout(() => resolve("FATTO!"), 10000)
+                setTimeout(() => resolve("FATTO!"), 5000)
             });
 
-            // attende fino a quando la promise si risolve (*)
-            // Qui l'esecuzione va in pausa
-            //  Questo non costa alcuna risorsa della CPU, perché il motore può fare altri lavori nel frattempo: eseguire altri script, gestire eventi etc.
             alert('1')
-            let result = await promise;
+            let result = await promise; // Attende fino a quando la promise si risolve.
             alert(result);
             alert('2')
         }
 
         f();
-	</script>
+	</script>-->
 
+	<script>
+        let promise = new Promise((resolve, reject) => {
+            setTimeout(() => resolve("FATTO!"), 5000)
+        });
+
+        // await funziona solo all'interno delle funzioni async
+        async function f() {
+            let result = await promise;
+            alert(result);
+        }
+
+        // Risultato: 1 | 2 | FATTO!
+        alert('1')
+        f();
+        alert('2')
+	</script>
 
 </head>
 <body>
