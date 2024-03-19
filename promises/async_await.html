@@ -53,6 +53,7 @@
 	</script>-->
 
 	<script>
+		// SAREBBE questo il modo standard di utlizzo.
         let promise = new Promise((resolve, reject) => {
             setTimeout(() => resolve("FATTO!"), 5000)
         });
@@ -61,6 +62,7 @@
         async function f() {
             let result = await promise;
             alert(result);
+            // Qua dentro metto tutto ciò che dipende effettivamente da result e che devo aspettare per forza!
         }
 
         // Risultato: 1 | 2 | FATTO!

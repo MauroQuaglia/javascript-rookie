@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>async/await</title>
+
+	<!--<script>
+        // Risultato: 1 | 2 | ERROR!
+        function f() {
+            let promise = new Promise((resolve, reject) => {
+                setTimeout(() => reject("ERROR!"), 5000)
+            });
+
+            alert('1');
+            promise.catch(error => alert(error))
+            alert('2');
+        }
+
+        f();
+	</script>-->
+
+	<!--	<script>
+			// Risultato: 1 | ERROR! | 2
+			function f() {
+				let promise = new Promise((resolve, reject) => {
+					setTimeout(() => reject("ERROR!"), 5000)
+				});
+
+				alert('1');
+				promise
+					.catch(error => alert(error))
+					.then(() => alert('2'))
+			}
+
+			f();
+		</script>-->
+
+	<!--	<script>
+			// Risultato: 1 | ERROR!
+			function f() {
+				let promise = new Promise((resolve, reject) => {
+					setTimeout(() => reject("ERROR!"), 5000)
+				});
+
+				alert('1');
+				promise
+					.then(() => alert('2'))
+					.catch(error => alert(error))
+
+			}
+
+			f();
+		</script>-->
+
+<!--
+		<script>
+			// Risultato: 1
+			async function f() {
+				let promise = new Promise((resolve, reject) => {
+					setTimeout(() => reject("ERROR!"), 5000)
+				});
+
+				alert('1')
+				let result = await promise;  // Viene lanciato un errore, per cui non prosegue
+				alert(result);
+				alert('2')
+			}
+
+			f();
+		</script>
+-->
+
+
+<!--	<script>
+        // Risultato: 1 | BECCATO! | 2
+        async function f() {
+            let promise = new Promise((resolve, reject) => {
+                setTimeout(() => reject("ERROR!"), 5000)
+            });
+
+            alert('1')
+            try {
+                let result = await promise;
+                alert(result);
+            } catch {
+                alert('BECCATO!')
+            }
+
+            alert('2')
+        }
+
+        f();
+	</script>-->
+
+		<script>
+			let promise = new Promise((resolve, reject) => {
+				setTimeout(() => reject("ERROR!"), 5000)
+			});
+
+			async function f() {
+				let result = await promise;
+				alert(result);
+			}
+
+            // Risultato: 1 | 2
+			// l'eccezione lanciata si è persa.
+			alert('1')
+			f();
+            // f().catch(e => alert(e)); In questo caso sarebbe invece gestita!
+			alert('2')
+		</script>
+
+</head>
+<body>
+</body>
+</html>
