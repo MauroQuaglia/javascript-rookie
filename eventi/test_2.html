@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>addEventListener</title>
+</head>
+<body>
+
+<input id="button" value="Add Event Listener" type="button">
+<script>
+	function gestore_1(event){
+        console.log(event)
+        alert('Primo evento!')
+	}
+    function gestore_2(event){
+        alert('Secondo evento!')
+    }
+    button.addEventListener("click", gestore_1)
+    button.addEventListener("click", gestore_2)
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Eventi</title>
+</head>
+<body>
+
+<!-- Evento diretto sull'elemento - deprecato -->
+<input value="Modo 1" onclick="alert('Modo 1!')" type="button">
+
+
+<!-- Separazione tra codice ed evento -->
+<script>
+    function action() {
+        alert("Modo 2!");
+    }
+</script>
+<input value="Modo 2" onclick="action()" type="button">
+
+<!-- Come sopra ma posso agganciarmi a modo_3 solo dopo averlo definito. PErò è comunque problematico perché sovrascrive gli eventi -->
+<input id="modo_3" value="Modo 3"  type="button">
+<script>
+    modo_3.onclick = function () {
+        alert("Modo 3!");
+    }
+    modo_3.onclick = function () {
+        alert("Modo 3 Sovrascritto!");
+    }
+</script>
+
+</body>
+</html>
