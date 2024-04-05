@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>capturing</title>
+</head>
+<body>
+
+<div id="nonno">
+	NONNO
+	<div id="padre">
+		PADRE
+		<div id="figlio">
+			FIGLIO
+		</div>
+	</div>
+</div>
+
+<script>
+    function nonno(event) {
+        console.log('Sono il Nonno!', "Fase:", event.eventPhase);
+    }
+
+    function padre(event) {
+        console.log('Sono il Padre!', "Fase:", event.eventPhase);
+    }
+
+    function figlio(event) {
+        console.log('Sono il Figlio!', "Fase:", event.eventPhase);
+    }
+
+
+    document.querySelector('#nonno').addEventListener('click', nonno, {capture: true})
+    document.querySelector('#nonno').addEventListener('click', nonno, {capture: false})
+    document.querySelector('#padre').addEventListener('click', padre, {capture: true})
+    document.querySelector('#padre').addEventListener('click', padre, {capture: false})
+    document.querySelector('#figlio').addEventListener('click', figlio, {capture: true})
+    document.querySelector('#figlio').addEventListener('click', figlio, {capture: false})
+</script>
+
+</body>
+</html>
