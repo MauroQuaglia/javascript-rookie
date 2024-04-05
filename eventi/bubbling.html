@@ -18,14 +18,14 @@
 
 <script>
     function nonno(event) {
-		console.log('Sono il Nonno!');
-		console.log(`Chi ha originato l'evento è: ${event.target.id}`);
-		console.log(`Il mio evento invece è: ${event.currentTarget.id}`);
-		console.log(`this e currentTarget sono stessa cosa: ${this.id}`);
+        console.log('Sono il Nonno!');
+        console.log(`Chi ha originato l'evento è: ${event.target.id}`);
+        console.log(`Il mio evento invece è: ${event.currentTarget.id}`);
+        console.log(`this e currentTarget sono stessa cosa: ${this.id}`);
         // event.target è coluiche ha innescatol'evento
-		if (event.ciao){
+        if (event.ciao) {
             console.log("Mi ha passato un dato l'evento originario!", event.ciao);
-		}
+        }
     }
 
     function padre(event) {
@@ -36,11 +36,13 @@
         console.log('Sono il Figlio!');
         //event.stopPropagation();
         //event.stopImmediatePropagation(); più forte ancora
-		event.ciao = "CIAO"
+        event.ciao = "CIAO"
     }
 
 
-    document.querySelector('#nonno').addEventListener('click', nonno)
+    // Passare l'opzione {capture: false} è come non mettere niente perché è il default ossia:
+	// Il bubbling è il default!
+    document.querySelector('#nonno').addEventListener('click', nonno, {capture: false})
     document.querySelector('#padre').addEventListener('click', padre)
     document.querySelector('#figlio').addEventListener('click', figlio)
 </script>

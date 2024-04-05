@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>bubbling</title>
+	<title>capturing</title>
 </head>
 <body>
 
@@ -18,14 +18,14 @@
 
 <script>
     function nonno(event) {
-		console.log('Sono il Nonno!');
-		console.log(`Chi ha originato l'evento è: ${event.target.id}`);
-		console.log(`Il mio evento invece è: ${event.currentTarget.id}`);
-		console.log(`this e currentTarget sono stessa cosa: ${this.id}`);
+        console.log('Sono il Nonno!');
+        console.log(`Chi ha originato l'evento è: ${event.target.id}`);
+        console.log(`Il mio evento invece è: ${event.currentTarget.id}`);
+        console.log(`this e currentTarget sono stessa cosa: ${this.id}`);
         // event.target è coluiche ha innescatol'evento
-		if (event.ciao){
+        if (event.ciao) {
             console.log("Mi ha passato un dato l'evento originario!", event.ciao);
-		}
+        }
     }
 
     function padre(event) {
@@ -36,13 +36,13 @@
         console.log('Sono il Figlio!');
         //event.stopPropagation();
         //event.stopImmediatePropagation(); più forte ancora
-		event.ciao = "CIAO"
+        event.ciao = "CIAO"
     }
 
 
-    document.querySelector('#nonno').addEventListener('click', nonno)
-    document.querySelector('#padre').addEventListener('click', padre)
-    document.querySelector('#figlio').addEventListener('click', figlio)
+    document.querySelector('#nonno').addEventListener('click', nonno, {capture: true})
+    document.querySelector('#padre').addEventListener('click', padre, {capture: true})
+    document.querySelector('#figlio').addEventListener('click', figlio, {capture: true})
 </script>
 
 </body>

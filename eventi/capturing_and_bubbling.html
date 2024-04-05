@@ -18,31 +18,24 @@
 
 <script>
     function nonno(event) {
-        console.log('Sono il Nonno!');
-        console.log(`Chi ha originato l'evento è: ${event.target.id}`);
-        console.log(`Il mio evento invece è: ${event.currentTarget.id}`);
-        console.log(`this e currentTarget sono stessa cosa: ${this.id}`);
-        // event.target è coluiche ha innescatol'evento
-        if (event.ciao) {
-            console.log("Mi ha passato un dato l'evento originario!", event.ciao);
-        }
+        console.log('Sono il Nonno!', "Fase:", event.eventPhase);
     }
 
     function padre(event) {
-        console.log('Sono il Padre!');
+        console.log('Sono il Padre!', "Fase:", event.eventPhase);
     }
 
     function figlio(event) {
-        console.log('Sono il Figlio!');
-        //event.stopPropagation();
-        //event.stopImmediatePropagation(); più forte ancora
-        event.ciao = "CIAO"
+        console.log('Sono il Figlio!', "Fase:", event.eventPhase);
     }
 
 
     document.querySelector('#nonno').addEventListener('click', nonno, {capture: true})
+    document.querySelector('#nonno').addEventListener('click', nonno, {capture: false})
     document.querySelector('#padre').addEventListener('click', padre, {capture: true})
+    document.querySelector('#padre').addEventListener('click', padre, {capture: false})
     document.querySelector('#figlio').addEventListener('click', figlio, {capture: true})
+    document.querySelector('#figlio').addEventListener('click', figlio, {capture: false})
 </script>
 
 </body>
