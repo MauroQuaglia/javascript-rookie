@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SW pixel VS HW pixel</title>
+	<style>
+        .box {
+            height: 100px;
+            width: 200px;
+			background-color: darkolivegreen;
+        }
+	</style>
+</head>
+<body>
+
+Io scrivo i pixel CSS cioè i SWpx, poi gli HWpx vengono calcolati in automatico in base al valore del dpr.
+
+<div id="box" class="box">
+	Generale: dpr = HWpx / SWpx
+	<br/>
+	Da cui: HWpx = dpr * SWpx
+</div>
+
+</body>
+</html>

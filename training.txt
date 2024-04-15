@@ -1,2 +1,1 @@
-FROM "https://it.javascript.info/":
-AT: https://it.javascript.info/dom-nodes
+https://it.javascript.info/styles-and-classes
