@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS</title>
+</head>
+<body>
+
+<style>
+    .box {
+        height: 100px;
+        width: 200px;
+    }
+</style>
+
+<link rel="stylesheet" type="text/css" href="my_box.css"/>
+
+<div id="box" class="box my_box" style="background-color: darkolivegreen; height: 200px">CSS</div>
+
+<script>
+    let box = window.document.querySelector('#box');
+    console.dir(box);
+
+    //document.body.style.backgroundColor = prompt('Display box?', 'green');
+
+	box.style.margin = '10px 5px 5px 10px'
+	box.style.border = '3px solid red'
+	box.style.padding = '10px 15px 30px 1px'
+
+	console.log("Box Style: ", box.style)
+	console.log("Box ComputedStyle: ", getComputedStyle(box))
+</script>
+
+
+</body>
+</html>
