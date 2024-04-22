@@ -1,1 +1,3 @@
 Devo fare questo da zero: https://it.javascript.info/coordinates
+
+vedere se il video è shadow
