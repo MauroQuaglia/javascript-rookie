@@ -1,1 +1,1 @@
-Devo fare questo da zero: https://it.javascript.info/events
+Devo fare questo da zero: https://it.javascript.info/bubbling-and-capturing

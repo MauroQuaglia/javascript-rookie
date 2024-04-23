@@ -10,10 +10,12 @@
 <script>
 	function gestore_1(event){
         console.log(event)
-        alert('Primo evento!')
+		console.log('This:', this) // elemento che contiene il gestore
+        console.log('Primo evento!')
 	}
     function gestore_2(event){
-        alert('Secondo evento!')
+        console.log('Secondo evento!')
+        console.log('event.type', event.type)
     }
     button.addEventListener("click", gestore_1)
     button.addEventListener("click", gestore_2)
