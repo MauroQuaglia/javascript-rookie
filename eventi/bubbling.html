@@ -34,8 +34,12 @@
 
     function figlio(event) {
         console.log('Sono il Figlio!');
+
+        // Per interrompere il bubbling
         //event.stopPropagation();
         //event.stopImmediatePropagation(); più forte ancora
+
+
         event.ciao = "CIAO"
     }
 

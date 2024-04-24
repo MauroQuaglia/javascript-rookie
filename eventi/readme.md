@@ -6,11 +6,11 @@
 
 DOMContentLoaded –> costruzione del DOM è stata completata.
 
-Eventi:
-sul tag html con on<event>: sconsigliato
-separazione tra codice ed evento: onclick="action()": brutto
-usando la proprietà DOM on<event>: elem.onclick = function() {}: brutto anche perché è sovrascrivibile
-addEventListener(...): OK, siusa sepre questa!
+* Eventi:
+* sul tag html con on<event>: sconsigliato
+* separazione tra codice ed evento: onclick="action()": brutto
+* usando la proprietà DOM on<event>: elem.onclick = function() {}: brutto anche perché è sovrascrivibile
+* addEventListener(...): OK, siusa sepre questa!
 {
 once: false  (lo puoi eseguire più volte)
 capture: false (lo fa durante il bubbling)
