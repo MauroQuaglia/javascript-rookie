@@ -3,10 +3,37 @@
 <head>
 	<title>Network fetch()</title>
 	<script>
-        // Implementazione base.
+        // Implementazione base con fetch.
         fetch('https://api.restful-api.dev/objects')
             .then(response => response.json())
-			.then(parsed => console.log(parsed[0].name))
+            .then(parsed => console.log("V1", parsed[0].name))
+	</script>
+	<script>
+        // Riscritta in termini di async e await.
+        async function myFetch() {
+            let response = await fetch('https://api.restful-api.dev/objects');
+            let parsed = await response.json();
+            console.log("V2", parsed[0].name);
+        }
+
+        myFetch();
+	</script>
+	<script>
+        // Implementazione più completa di fetch.
+        fetch('https://api.restful-api.dev/objects')
+            .then(response => {
+                if (response.ok && response.headers.get('Content-Type')) {
+                    return response.json();
+                } else {
+                    throw new Error('Error!')
+                }
+            })
+            .then(parsed =>
+                console.log("V1", parsed[0].name)
+            )
+            .catch(error => {
+                console.log('Ecco Error', error);
+			})
 	</script>
 </head>
 <body>

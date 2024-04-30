@@ -1,1 +1,1 @@
-Devo fare questo da zero: https://it.javascript.info/default-browser-action
+Devo fare questo da zero: https://it.javascript.info/dispatch-events
