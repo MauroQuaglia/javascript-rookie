@@ -1,0 +1,1 @@
+Server (HTTP-header Set-Cookie) ---> Client (Imposta il cookie)

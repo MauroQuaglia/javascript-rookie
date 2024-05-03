@@ -1,1 +1,1 @@
-Devo fare questo da zero: https://it.javascript.info/dispatch-events
+Devo fare questo da zero: https://it.javascript.info/cookie
