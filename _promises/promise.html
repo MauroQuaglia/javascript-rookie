@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Promise</title>
+    <script>
+        let promise = new Promise((resolve, reject) => {
+            let input = prompt('OK or KO?')
+            if (input === 'OK')
+                setTimeout(() => resolve("OK in 5 secondi!"), 5000)
+            else
+                setTimeout(() => reject("KO in 3 secondi!"), 3000)
+        });
+
+        promise
+            .then(text => alert(text + exc + ' Then Resolved!'))
+            .catch(text => alert(text + 'Catch Rejected'))
+    </script>
+</head>
+<body>
+</body>
+</html>

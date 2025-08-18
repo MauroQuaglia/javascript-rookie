@@ -1,9 +1,6 @@
 /* SINTASSI
 
-let promise = new Promise(function (resolve, reject) {
-    // resolve(value) oppure resolve(nuova-promise)
-    // reject(new Error())
-});
+
 OPPURE
 let promise = new Promise((resolve, reject) => {
     // resolve(value) oppure resolve(nuova-promise)
