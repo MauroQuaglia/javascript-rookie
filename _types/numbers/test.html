@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Numbers</title>
+    <script>
+        // Massimo intero rappresentabile con precisione.
+        let a = 9007199254740992;
+        console.log(a)
+
+        // Display 900719925474099200000, quindi perdo precisione.
+        // Se voglio mantenere precisione non devo usare Number.
+        let b = 900719925474099200991;
+        console.log(b)
+    </script>
+
+    <script>
+        console.log(`Overflow: 11e111 * 99E999 = ${11e111 * 99E999}`)
+        console.log(`Underflow: 1 / 99E999 = ${1 / 99E999}`)
+    </script>
+
+    <script>
+        // Anche la divisione per 0 non da errore ma viene gestita con Infinity!
+        console.log(`1 / 0 = ${1 / 0}`) // Infinity
+
+        console.log(`+1 / 0 = ${+1 / 0}`) // Infinity
+        console.log(`-1 / 0 = ${-1 / 0}`) // -Infinity
+
+        console.log(`1 / +0 = ${1 / +0}`) // Infinity
+        console.log(`1 / -0 = ${1 / -0}`) // -Infinity
+    </script>
+
+    <script>
+        console.log(`Spazio tra due numeri = ${Number.EPSILON}`)
+    </script>
+
+    <script>
+        // Approssimazioni
+        // 1/2, 1/4, ...,1/1024 riesco a rappresentarli senza approssimazione
+        // 1/10, 1/100, ... invece no
+        let x = 0.3 - 0.2
+        let y = 0.2 - 0.1
+        console.log(`0.3 - 0.2 === 0.2 - 0.1: ${x === y}`)
+        console.log(`0.3 - 0.2 === 0.1: ${x === 0.1}`)
+        console.log(`0.2 - 0.1 === 0.1: ${y === 0.1}`)
+
+        console.log((0.4 - 0.2).toPrecision(16))
+        console.log((0.3 - 0.2).toPrecision(16))
+    </script>
+</head>
+<body>
+</body>
+</html>
