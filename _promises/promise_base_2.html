@@ -3,20 +3,19 @@
 <head>
     <title>Promise</title>
     <script>
-        // Torna una promise.
-        async function promise() {
-           return new Promise((resolve, reject) => {
-                let input = prompt('OK or KO?')
-                if (input === 'OK')
-                    setTimeout(() => resolve("OK in 5 secondi!"), 5000)
-                else
-                    setTimeout(() => reject("KO in 3 secondi!"), 3000)
+        async function f() {
+            let promise = new Promise((resolve, reject) => {
+                setTimeout(() => resolve("FATTO!"), 5000)
             });
+
+            console.log('1')
+            let result = await promise; // Attende fino a quando la promise si risolve.
+            console.log(result)
+            console.log('2')
         }
 
-        // promise
-        //     .then(text => alert(text + ' Then Resolved!'))
-        //     .catch(text => alert(text + ' Catch Rejected'))
+        f();
+        console.log('ciao')
     </script>
 </head>
 <body>
