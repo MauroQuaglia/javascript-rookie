@@ -1,3 +1,5 @@
+Number: 64 bit
+----
 | Numero scritto     | Valore interno     | Motivo                             |
 | ------------------ | ------------------ | ---------------------------------- |
 | `1`                | `1`                | Intero piccolo                     |
