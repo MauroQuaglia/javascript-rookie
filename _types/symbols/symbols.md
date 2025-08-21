@@ -1,0 +1,1 @@
+* I symbol servono per dare nomi alle property ma senza usare delle stringhe.

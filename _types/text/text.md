@@ -1,1 +1,0 @@
-String: UTF-16
