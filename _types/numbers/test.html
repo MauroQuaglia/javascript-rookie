@@ -46,6 +46,18 @@
         console.log((0.4 - 0.2).toPrecision(16))
         console.log((0.3 - 0.2).toPrecision(16))
     </script>
+
+    <script>
+        // Conversioni con il new... meglio di no.
+        // Vale anche per stringhe e boolani.
+        x = new Number('3');
+        console.log(typeof(x)); // object
+
+        y = Number('3');
+        console.log(typeof(y)); // number... che è quello che voglio.
+    </script>
+
+
 </head>
 <body>
 </body>
