@@ -3,3 +3,7 @@
 -----
 * fare sezione cose utili:
   * Numero di elementi in pagina: document.querySelectorAll('*').length
+
+----
+https://www.amazon.it/HTML-CSS-QuickStart-Guide-Fundamentals/dp/1636100015/ref=tmm_hrd_swatch_0
+https://www.amazon.com/dp/1839211563/?tag=codeinwp0d3-20
