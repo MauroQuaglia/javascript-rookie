@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conditional syntax</title>
+    <script>
+        let obj = {
+            a: 1,
+            f: function (x) {
+                return x;
+            },
+        };
+
+        console.log(`obj.a = ${obj.a}`);
+        console.log(`obj?.b = ${obj?.b}`);
+
+        console.log(`obj.f(5) = ${obj.f(5)}`);
+        console.log(`obj?.f(5) = ${obj?.f(5)}`);
+        console.log(`obj?.g?.(5) = ${obj?.g?.(5)}`);
+    </script>
+</head>
+</html>
+

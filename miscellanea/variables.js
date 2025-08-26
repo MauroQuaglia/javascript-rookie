@@ -28,6 +28,7 @@ book.contents = {};
 
 //console.log(book.contents.unknown1.unknown2); Questa genererebbe un errore.
 console.log(book.contents.unknown1?.unknown2); // Questa ritorna undefined
+console.log(book.contents.unknown1?.['unknown2']); // Questa ritorna undefined
 
 // vero perché ab.. viene prima di ac..
 console.log('abba' < 'acca')
