@@ -1,6 +1,0 @@
-* TODO
-* devo fare pagina 70.
-
-* fare sezione cose utili:
-  * Numero di elementi in pagina: document.querySelectorAll('*').length
-
