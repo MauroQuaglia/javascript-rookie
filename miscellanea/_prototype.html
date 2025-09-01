@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prototype</title>
+</head>
+<body>
+<script>
+    function Person1(name) {
+        this.name = name;
+    }
+
+    Person1.prototype.sayHello = function () {
+        console.log(`Hello ${this.name}`);
+    }
+
+    let p1 = new Person1('Mauro');
+    p1.sayHello();
+</script>
+
+<script>
+    class Person2 {
+        constructor(name) {
+            this.name = name;
+        }
+
+        sayHello() {
+            console.log(`Hello ${this.name}`);
+        }
+    }
+
+    let p2 = new Person2('Mauro');
+    p2.sayHello();
+</script>
+
+<script>
+    console.log(`Person1.prototype ${Person1.prototype}`);
+    console.log(`Person2.prototype ${Person2.prototype}`);
+</script>
+</body>
+</html>
