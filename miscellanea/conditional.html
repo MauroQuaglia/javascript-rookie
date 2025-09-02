@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conditional</title>
+    <script>
+        // Esempi di cosa si può fare per esempio con AND && oppure OR ||, anche se di base viene usato solo per puro valore booleano.
+        let a = true;
+        let b = true;
+
+        if (a === true && b === true)
+            console.log('TRUE')
+
+        // Anche i truthy e i falsy value vanno bene e notare che torna sempre un valore!
+        console.log({} && 1, "Torna 1 perché ha valutato {} che è truthy quindi gli serve valutare il secondo")
+        console.log({} || 1, "Torna {} perché ha valutato {} ed è sufficiente, il secondo neanche lo valuta!")
+
+        function prova(){
+            console.log('Prova')
+            return 'ciao'
+        }
+
+        console.log({} && prova(), "Chiama prova() e torna ciao")
+    </script>
+</head>
+</html>
+
