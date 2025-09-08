@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object</title>
+    <script>
+        'use strict';
+        let a = {}, b = {};
+
+        console.log('a.__proto__ === b.__proto__', a.__proto__ === b.__proto__); // true
+        Object.prototype.sayHello = 'Hello';
+
+        let c = {}
+        console.log('c.sayHello', c.sayHello); // Hello
+        console.log('a.sayHello', a.sayHello); // Hello
+    </script>
+</head>
+</html>
+

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object</title>
+    <script>
+        'use strict';
+
+        function Prova1 (name) {
+            this.name = name;
+            this.sayHello = function () {
+                return this.name;
+            }
+        }
+
+        class Prova2 {
+            constructor(name) {
+                this.name = name;
+            }
+
+            sayHello1() {
+                return this.name;
+            }
+
+            sayHello2 = function () {
+                return this.name;
+            }
+        }
+
+
+
+
+    </script>
+</head>
+</html>
+

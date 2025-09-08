@@ -16,3 +16,5 @@
  * new Object() -> eredita da Object.prototype
  * new Array() -> eredita da Array.prototype
  * new Date() -> eredita da Date.prototype
+
+* Il Prototype di una funzione è quella parte che viene ereditata.

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object</title>
+    <script>
+        'use strict';
+
+        let p = new Prova1();
+
+        // NB: hoisted
+        function Prova1(name) {
+            this.name = name;
+            this.sayHello1 = function () {
+                return "sayHello1";
+            }
+        }
+        Prova1.prototype.sayHello2 = function () {
+            return "sayHello2";
+        }
+
+        print('p.__proto__'); // Object + sayHello2
+        print('Prova1.prototype'); // Object + sayHello2
+        print('p.__proto__ === Prova1.prototype'); // true
+
+        // Istanze diverse hanno una diversa funzione sayHello1 e la stessa funzione sayHello2.
+        let x = new Prova1('X');
+        let y = new Prova1('Y');
+
+         print('x.sayHello1 === y.sayHello1'); // false
+         print('x.sayHello2 === y.sayHello2'); // true
+
+        // Se ho un metodo nell'istanza posso fare override solo di quello.
+        // Se è nel prototype, lo posso cambiare per tutti.
+
+        // Il prototype è ereditabile.
+
+        function print(value) {
+            console.log(value,  eval(value));
+        }
+
+
+    </script>
+</head>
+</html>
+
