@@ -12,3 +12,4 @@
 # Hoisted
 * Le funzioni sono hoisted le classi non sono hoisted.
 * Quindi anche se poi il risultato di creare oggetti __con funzioni__ e __con classi__ è lo stesso, di questo comportamento ne dobbiamo tenere conto.
+

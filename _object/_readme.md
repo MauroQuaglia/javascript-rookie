@@ -7,10 +7,13 @@
     * enumerable: // La propery viene ritornata nel for/in? (default: true)
     * configurable: // Può essere cancellata? Posso modificare gli attributi? (default: true)
   
-* 3 modi per creare un oggetto:
+* 3 modi equivalenti per creare un oggetto:
   * `{}`
   * `new Object()`
-  * `Object.create` // particolare
+  * `Object.create(Object.prototype)` 
+
+* Oggetto completamente vuoto, senza neanche il prototype:
+  * `let o = Object.create(null);`
 
 * Ereditarietà:
  * `new Object()` -> eredita da `Object.prototype`
