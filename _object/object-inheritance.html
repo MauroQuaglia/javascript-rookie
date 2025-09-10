@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object</title>
+    <script>
+        'use strict';
+
+        function Prova1(name) {
+            this.name = name;
+        }
+        Prova1.prototype.sayHello2 = function () { return "sayHello2"; };
+        Prova1.prototype.ciao = "ciao";
+
+        // Creiamo un nuovo oggetto con Prova1.prototype come prototipo
+        let p = Object.create(Prova1.prototype);
+        p.surname = "Quaglia";
+
+        console.log(p.surname);           // "Quaglia" proprietà propria
+        console.log(p.ciao);              // "ciao" ereditata
+        console.log(p.sayHello2());       // "sayHello2" ereditata
+
+        console.log(p.hasOwnProperty("surname")); // true , proprietà diretta
+        console.log(p.hasOwnProperty("ciao"));    // false, ereditata dal prototipo
+        console.log(p.hasOwnProperty("sayHello2"));// false, ereditata dal prototipo
+    </script>
+</head>
+</html>
+
