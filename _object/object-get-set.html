@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object Get Set</title>
+    <script>
+        'use strict';
+
+        let o = {
+            set accQ(value) {
+                console.log("Setter");
+                this._q = value;
+            },
+            get accQ() {
+                console.log("Getter");
+                return this._q;
+            }
+        };
+
+        console.log(o.accQ);
+        console.log(o.accQ = 'Hello');
+        console.log(o.accQ);
+    </script>
+</head>
+</html>
+

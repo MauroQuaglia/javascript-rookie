@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object Locale</title>
+    <script>
+        'use strict';
+
+        let o =
+            {
+                p: 1000000, // number
+                toString() {
+                    return this.p.toString();
+                },
+                toLocaleString() {
+                    return this.p.toLocaleString();
+                }
+            };
+
+        console.log(o.p)
+        console.log(o.toString());
+        console.log(o.toLocaleString());
+
+    </script>
+</head>
+</html>
+

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object JSON</title>
+    <script>
+        'use strict';
+
+        let o =
+            {
+                p: 1000000, // number
+                toJSON() {
+                    console.log('Chiamato!');
+                    return this.p.toString();
+
+                }
+            };
+
+        console.log(JSON.stringify(o));
+    </script>
+</head>
+</html>
+
