@@ -1,2 +1,1 @@
 Plugin jQuery: la grande quantità di plugin disponibili ancora fa di jQuery uno strumento utile per funzionalità particolari difficili da replicare.
-Ultimate Modern jQuery for Web App Development: Create Stunning Interactive Web Applications with Seamless DOM Manipulation, Animation, and AJAX Integration of jQuery and JavaScript (English Edition)

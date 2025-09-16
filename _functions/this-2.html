@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script>
+        let objBox = {
+            innerBox: function () {
+                // Questa funzione è chiamata come metodo di un oggetto, quindi il this è l'oggetto.
+                console.log(`Value of this in innerBox: [${this}]`) // objBox
+
+                // Non è un metodo di un oggetto, quindi this (il chiamante) è window o undefined in strict mode.
+                function test() {
+                    console.log(`Value of this in test: [${this}]`) // window, undefined
+                }
+
+                test();
+            }
+        }
+
+        objBox.innerBox();
+    </script>
+</head>
+</html>

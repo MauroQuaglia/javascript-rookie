@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script>
+        function box1() {
+            function innerBox() {
+                console.log(`Value of this in innerBox: [${this}]`) // window, undefined
+            }
+            innerBox();
+        }
+
+        box1();
+    </script>
+</head>
+</html>
