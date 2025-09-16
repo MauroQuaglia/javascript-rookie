@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script>
+        // Il this dipende dal contesto di esecuzione e non da quello di definizione.
+
+        const f = function () {
+            console.log(`Value of this: ${this}`);
+        }
+        f(); // -> Window
+
+        let o = {}
+        o['myF'] = f;
+        o.myF(); // -> Object
+    </script>
+</head>
+</html>
