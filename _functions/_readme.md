@@ -6,5 +6,7 @@
     * __undefined__ in strict mode.
     * Occhio però che sulle arrow function anche in strict mode vale __window__.
 
+## scope
 * Le variabili disponibili dipendono dallo `scope`, non da `this`. 
   * Lo `scope` è indipendente dal `this`.
+  * Lo `scope` dipende da dove è stata definita originariamente la funzione.

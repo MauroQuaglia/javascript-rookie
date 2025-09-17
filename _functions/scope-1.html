@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script>
+        // 'use strict';
+        let scope = 'global scope';
+
+        function check_f1_scope() {
+            let scope = 'local scope';
+
+            function f1() {
+                return scope;
+            }
+
+            return f1();
+        }
+
+        console.log(check_f1_scope()) // local scope
+
+
+        function check_g1_scope() {
+            let scope = 'local scope';
+
+            function g1() {
+                return scope;
+            }
+
+            return g1;
+        }
+
+        console.log(check_g1_scope()()); // local scope
+    </script>
+</head>
+</html>
