@@ -5,15 +5,16 @@
     <title>Test</title>
     <script>
         // Il this dipende dal contesto di esecuzione e non da quello di definizione.
+        'use strict';
 
         const f = function () {
             console.log(`Value of this: ${this}`);
         }
-        f(); // -> Window
+        f(); // undefined
 
-        let o = {}
-        o['myF'] = f;
-        o.myF(); // -> Object
+        let obj = {}
+        obj['myFunction'] = f;
+        obj.myFunction(); // obj
     </script>
 </head>
 </html>

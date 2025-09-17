@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Test</title>
     <script>
+        'use strict';
         let objBox = {
             innerBox: function () {
                 // Questa funzione è chiamata come metodo di un oggetto, quindi il this è l'oggetto.
@@ -13,11 +14,9 @@
                 function test() {
                     console.log(`Value of this in test: [${this}]`) // window, undefined
                 }
-
                 test();
             }
         }
-
         objBox.innerBox();
     </script>
 </head>

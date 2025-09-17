@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <title>Test</title>
     <script>
+        'use strict';
+        // Sempre windows, undefined perché non sono chiamate su nessun oggetto.
         function box1() {
+            console.log(`Value of this in box1: [${this}]`) // window, undefined
             function innerBox() {
                 console.log(`Value of this in innerBox: [${this}]`) // window, undefined
             }
             innerBox();
         }
-
         box1();
     </script>
 </head>

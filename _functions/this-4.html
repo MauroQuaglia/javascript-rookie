@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script>
+        // 'use strict';
+        function f() {
+            console.log(`Value of this in f: ${this}.`);
+        }
+
+        f(); // window, undefined (strict)
+
+        const h = () => {
+            console.log(`Value of this in h: ${this}.`);
+        }
+
+        h(); // window, window (strict)
+    </script>
+</head>
+</html>

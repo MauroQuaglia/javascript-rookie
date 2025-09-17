@@ -1,3 +1,10 @@
 ## this
 * `this` indica l’oggetto che chiama la funzione, non le variabili disponibili.
-* Le variabili disponibili dipendono dallo `scope`, non da `this`. Lo `scope` è indipendente dal `this`.
+  * Di solito è __obj__ se la funzione è chiamata su un oggetto (metodo).
+  * Se non è chiamata su un oggetto il `this` vale:
+    * __window__ non in strict mode.
+    * __undefined__ in strict mode.
+    * Occhio però che sulle arrow function anche in strict mode vale __window__.
+
+* Le variabili disponibili dipendono dallo `scope`, non da `this`. 
+  * Lo `scope` è indipendente dal `this`.
