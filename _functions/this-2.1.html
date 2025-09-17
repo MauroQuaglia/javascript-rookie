@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script>
+        'use strict';
+        let objBox = {
+            innerBox: function () {
+                let self = this
+                console.log(`Value of this in innerBox: [${this}]`) // objBox
+
+                function test1() {
+                    console.log(`Value of this in test: [${this}]`) // undefined
+                    console.log(`Value of self in test: [${self}]`) // objBox
+                }
+                test1();
+
+                const test2 = () => {
+                    console.log(`Value of this in test: [${this}]`) // objBox
+                }
+                test2()
+            }
+        }
+        objBox.innerBox();
+    </script>
+</head>
+</html>
