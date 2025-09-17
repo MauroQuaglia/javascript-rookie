@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script>
+       // 'use strict';
+
+        const f = function fx() {
+            return "f";
+        }
+        console.log(`f.prototype: ${f.prototype}`); // object
+        console.log(`f.__proto__ === Function.prototype: ${f.__proto__ === Function.prototype}`); // true
+
+        const h = () => {
+            return "h";
+        }
+        console.log(`h.prototype: ${h.prototype}`); // undefined
+    </script>
+</head>
+</html>

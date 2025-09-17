@@ -10,3 +10,7 @@
 * Le variabili disponibili dipendono dallo `scope`, non da `this`. 
   * Lo `scope` è indipendente dal `this`.
   * Lo `scope` dipende da dove è stata definita originariamente la funzione.
+
+## prototype
+* Le funzioni definite normalmente hanno un prototype: `f.__proto__ === Function.prototype`
+* Le arrow function invece non hanno un prototype: `undefined`.
