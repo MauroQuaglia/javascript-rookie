@@ -6,10 +6,14 @@
     <script>
         'use strict';
 
+        // Funzione costruttrice
         function Prova1(name) {
             this.name = name;
         }
-        Prova1.prototype.sayHello2 = function () { return "sayHello2"; };
+
+        Prova1.prototype.sayHello2 = function () {
+            return "sayHello2";
+        };
         Prova1.prototype.ciao = "ciao";
 
         // Creiamo un nuovo oggetto con Prova1.prototype come prototipo

@@ -16,6 +16,7 @@
                 return "sayHello1";
             }
         }
+
         // Sempre metodo di istanza, ma questo è condiviso.
         // Inoltre questo è ereditabile.
         Prova1.prototype.sayHello2 = function () {
@@ -30,8 +31,8 @@
         let x = new Prova1('X');
         let y = new Prova1('Y');
 
-         print('x.sayHello1 === y.sayHello1'); // false
-         print('x.sayHello2 === y.sayHello2'); // true
+        print('x.sayHello1 === y.sayHello1'); // false
+        print('x.sayHello2 === y.sayHello2'); // true
 
         // Se ho un metodo nell'istanza posso fare override solo di quello.
         // Se è nel prototype, lo posso cambiare per tutti.
@@ -39,11 +40,8 @@
         // Il prototype è ereditabile.
 
         function print(value) {
-            console.log(value,  eval(value));
+            console.log(value, eval(value));
         }
-
-
     </script>
 </head>
 </html>
-

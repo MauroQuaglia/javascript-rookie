@@ -9,6 +9,8 @@
         let o =
             {
                 p: 1000000, // number
+
+                // Chiamata da JSON.stringify
                 toJSON() {
                     console.log('Chiamato!');
                     return this.p.toString();
