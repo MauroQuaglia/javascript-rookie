@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script>
+        'use strict';
+
+        // Le cose si fanno più interessanti quando posso sfruttare dei metodi di un prototype per esempio quello di un array
+        // per oggetti che sono array-like
+
+        let array_like = {
+            '0': 'zero',
+            '1': 'one',
+            '2': 'two',
+            'length': 3
+        }
+
+        // array_like non è un array.
+        console.log(Array.isArray(array_like)); // false
+
+        // Ma sfrutto il map dell'array per fare cose sul mio array like.
+        let result = Array.prototype.map.call(array_like, (v, i, a) => (v + i));
+        console.log(result);
+    </script>
+</head>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script>
+        'use strict';
+
+        let obj = {
+            foo: 'foo',
+            seaport(param1, param2) {
+                console.log(this.foo, param1, param2);
+            }
+        }
+
+        obj.seaport('Mauro', 'Quaglia') // foo Mauro Quaglia
+
+        // Il primo valore che passo è il this.
+        // I parametri vanno passati uno a uno
+        obj.seaport.call({foo: 'bar'}, 'Mauro', 'Quaglia'); // bar Mauro Quaglia
+
+        // Il primo valore che passo è il this.
+        // I parametri vanno passati come array.
+        obj.seaport.apply({foo: 'baz'}, ['Mauro', 'Quaglia']); // baz Mauro Quaglia
+    </script>
+</head>
+</html>
