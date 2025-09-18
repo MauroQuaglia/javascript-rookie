@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script>
+        'use strict'
+
+        let animal = {
+            eats: true,
+            walks() {
+                return 'Walking...';
+            }
+        }
+
+        let rabbit = {
+            flies: false
+        }
+        Object.setPrototypeOf(rabbit, animal);
+
+        console.log("Rabbit prototype?", Object.getPrototypeOf(rabbit));
+    </script>
+</head>
+</html>
