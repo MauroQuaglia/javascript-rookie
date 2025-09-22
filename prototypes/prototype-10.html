@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script>
+        'use strict'
+
+        // Anche se non gli imposto il prototype, eredita quello di default.
+        function Rabbit(name) {
+            this.name = name;
+        }
+
+        console.log("Prototype default", Rabbit.prototype); // Object
+        console.log(Rabbit.prototype.constructor === Rabbit); // true
+    </script>
+</head>
+</html>
