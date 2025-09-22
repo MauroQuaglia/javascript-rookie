@@ -22,6 +22,10 @@
         // Il primo valore che passo è il this.
         // I parametri vanno passati come array.
         obj.seaport.apply({foo: 'baz'}, ['Mauro', 'Quaglia']); // baz Mauro Quaglia
+
+        // Il bind gli passa il this e poi ritorna la funzione senza eseguirla.
+        let current = obj.seaport.bind({foo: 'taz'}, 'Mauro', 'Quaglia');
+        current(); // taz Mauro Quaglia
     </script>
 </head>
 </html>
