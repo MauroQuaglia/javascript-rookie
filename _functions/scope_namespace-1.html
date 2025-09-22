@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script>
+        'use strict';
+
+        function myNamespace() {
+            // Tutto è locale qua dentro, in questo modo non ci sarà conflitto con variabili già create.
+        }
+
+        // Questa viene definita come variabile globale, ma è solo questa.
+        // Se non voglio neanche questa devo usare un IIFE, vedi sotto.
+        myNamespace();
+
+
+        // Posso anche non definire il nome della funzione.
+        (function () {
+            // Le variabili qui dentro non inquinano lo scope globale.
+            let x = 42;
+            console.log(x);
+        })();
+
+    </script>
+</head>
+</html>

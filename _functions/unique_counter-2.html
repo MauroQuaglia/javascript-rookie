@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script>
+        'use strict';
+
+        let uniqueInteger = (function () {
+            let counter = 0;
+            return function () {
+                return counter++;
+            }
+        })();
+
+        console.log(uniqueInteger()); // 0
+        console.log(uniqueInteger()); // 1
+        console.log(uniqueInteger()); // 2
+    </script>
+</head>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script>
+        'use strict';
+
+        // Il counter è unico, ma il problema è che qualcuno lo potrebbe resettare.
+
+        function uniqueInteger(){
+            return uniqueInteger.counter++;
+        }
+        // Imposto una varibile.
+        uniqueInteger.counter = 0;
+
+        console.log(uniqueInteger()); // 0
+        console.log(uniqueInteger());  // 1
+    </script>
+</head>
+</html>
