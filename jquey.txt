@@ -1,1 +1,0 @@
-Plugin jQuery: la grande quantità di plugin disponibili ancora fa di jQuery uno strumento utile per funzionalità particolari difficili da replicare.
